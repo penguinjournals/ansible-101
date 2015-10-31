@@ -10,21 +10,21 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vagrant1.vm.box = "ubuntu/trusty64"
     vagrant1.vm.network "private_network", ip:"10.0.0.2"
     config.vm.provider "virtualbox" do |v|
-      v.name = "Ansible 101 - Task 2: Frontend"
+      v.name = "Ansible 101 - Task 3: Frontend1"
     end
   end
   config.vm.define "vagrant2" do |vagrant2|
     vagrant2.vm.box = "ubuntu/trusty64"
     vagrant2.vm.network "private_network", ip:"10.0.0.3"
     config.vm.provider "virtualbox" do |v|
-      v.name = "Ansible 101 - Task 2: Backend"
+      v.name = "Ansible 101 - Task 3: Frontend2"
     end
   end
   config.vm.define "vagrant3" do |vagrant3|
     vagrant3.vm.box = "ubuntu/trusty64"
     vagrant3.vm.network "private_network", ip:"10.0.0.4"
     config.vm.provider "virtualbox" do |v|
-      v.name = "Ansible 101 - Task 2: Database"
+      v.name = "Ansible 101 - Task 3: Database"
     end
   end
 end

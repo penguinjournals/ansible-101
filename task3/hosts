@@ -1,0 +1,10 @@
+frontend1 ansible_ssh_host=10.0.0.2
+frontend2 ansible_ssh_host=10.0.0.3
+database ansible_ssh_host=10.0.0.4
+
+[frontends]
+frontend1
+frontend2
+
+[databases]
+database
