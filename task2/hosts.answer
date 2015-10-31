@@ -1,0 +1,16 @@
+frontend ansible_ssh_host=10.0.0.2
+backend ansible_ssh_host=10.0.0.3
+database ansible_ssh_host=10.0.0.4
+
+[frontends]
+frontend
+
+[backends]
+backend
+
+[databases]
+database
+
+[application:children]
+frontends
+backends
