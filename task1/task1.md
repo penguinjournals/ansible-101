@@ -8,3 +8,6 @@ In this task, you have to achieve the next goals:
 2. Check that you can access the machine with Ansible
 3. Check the date and time of the machine
 4. Get a list of the files in /root folder
+
+Tip:
+vagrant ssh-config gives you some info you will need.
