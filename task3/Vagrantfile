@@ -11,6 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vagrant1.vm.network "private_network", ip:"10.0.0.2"
     config.vm.provider "virtualbox" do |v|
       v.name = "Ansible 101 - Task 3: Frontend1"
+      v.memory = 256
     end
   end
   config.vm.define "vagrant2" do |vagrant2|
@@ -18,6 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vagrant2.vm.network "private_network", ip:"10.0.0.3"
     config.vm.provider "virtualbox" do |v|
       v.name = "Ansible 101 - Task 3: Frontend2"
+      v.memory = 256
     end
   end
   config.vm.define "vagrant3" do |vagrant3|
@@ -25,6 +27,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     vagrant3.vm.network "private_network", ip:"10.0.0.4"
     config.vm.provider "virtualbox" do |v|
       v.name = "Ansible 101 - Task 3: Database"
+      v.memory = 256
     end
   end
 end

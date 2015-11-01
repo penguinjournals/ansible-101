@@ -13,9 +13,9 @@ Frontend webservers:
 
 Database server:
 - git
-- mysql-server
+- redis-server
 
-We'll use apache with its default configuration and you'll have to remove original index.html and replace it with the index.php file in the folder.
+We'll use apache with its default configuration and you'll have to remove original index.html and replace it with the index.php file in the folder. Tip: index.html is placed into /var/www/html and there has index.php to be placed too.
 
 If the task finishes correctly you should be able to see a web server in 10.0.0.2 and 10.0.0.3.
 

@@ -33,4 +33,4 @@
     sudo: yes
     apt: name={{item}} update_cache=yes state=present
     with_items:
-      - mysql-server
+      - redis-server
