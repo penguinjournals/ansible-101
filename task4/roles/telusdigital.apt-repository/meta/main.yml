@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  author: "Chris Olstrom"
+  company: "TELUS digital"
+  description: "Adds a repository for apt and imports the corresponding signing key."
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+    - name: Ubuntu
+      versions:
+        - all
+  categories:
+    - system
+    - packaging
+dependencies: []

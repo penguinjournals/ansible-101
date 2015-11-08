@@ -1,0 +1,21 @@
+---
+dependencies:
+  - role: telusdigital.java
+    java_version: 7
+
+galaxy_info:
+  author: "Ben Visser"
+  company: "TELUS digital"
+  description: "Tomcat 7 for Ubuntu"
+  license: MIT
+  platforms:
+    - name: Ubuntu
+      versions:
+      - lucid
+      - precise
+      - trusty
+      - utopic
+      - vivid
+  categories:
+    - development
+    - web

@@ -1,3 +1,33 @@
-- hosts: all
+- hosts: frontends
   roles:
-    - { role: geerlingguy.git, sudo: yes }
+    - common
+    - {
+        role: telusdigital.tomcat,
+        sudo: yes,
+        tomcat_hostname: localhost,
+        tomcat_server_port: 8080
+    }
+  tasks:
+    - name: Install nginx from apt
+      sudo: yes
+      apt: name=nginx state=present update_cache=yes
+
+    - name: Copy configuration file for nginx
+      sudo: yes
+      template: src=templates/nginx-default dest=/etc/nginx/sites-enabled/default
+      notify:
+        - Restart nginx
+
+  handlers:
+    - name: Restart nginx
+      service: name=nginx state=restarted
+
+- hosts: databases
+  roles:
+    - common
+    - {
+      role: bennojoy.mysql,
+      sudo: yes,
+      mysql_bind_address: 10.0.0.3,
+      mysql_root_db_pass: cocotero
+    }

@@ -1,9 +1,8 @@
-# Task3:
+# Task4:
 
-Playbooks are Ansible’s configuration, deployment, and orchestration language. They can describe a policy you want your remote systems to enforce, or a set of steps in a general IT process.
-If Ansible modules are the tools in your workshop, playbooks are your design plans. (*)
+Roles are ways of automatically loading certain vars_files, tasks, and handlers based on a known file structure. Grouping content by roles also allows easy sharing of roles with other users.(*)
 
-In this task you'll have an enviroment of two frontend webservers and a database server (we'll ignore things related to load balancers). Our stack is this:
+In this task you'll have an enviroment of a frontend webservers and a database server (we'll ignore thingse related to load balancers). Our stack is this:
 
 Frontend webservers:
 - git

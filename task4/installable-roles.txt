@@ -1,0 +1,3 @@
+ansible-galaxy install bennojoy.nginx -p roles
+ansible-galaxy install bennojoy.mysql
+ansible-galaxy install telusdigital.tomcat -p roles

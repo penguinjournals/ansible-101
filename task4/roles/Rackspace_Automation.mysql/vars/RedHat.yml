@@ -1,0 +1,5 @@
+---
+mysql_service_name: "mysqld"
+mysql_packages:
+  - MySQL-python
+  - mysql-server

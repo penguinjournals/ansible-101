@@ -1,0 +1,15 @@
+---
+- name: >
+    Suse | set_fact
+      mysql_supported_os: True
+  set_fact:
+    mysql_supported_os: True
+
+- name: Suse | install packages
+  zypper: name={{ item }} state=installed
+  with_items: mysql_packages
+  register: mysql_install
+
+- name: Suse | configure the service
+  template: src=Suse-my.cnf.j2 dest=/etc/my.cnf owner=root group=mysql mode=0640
+  notify: restart mysql

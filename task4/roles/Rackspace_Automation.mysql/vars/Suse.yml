@@ -1,0 +1,4 @@
+---
+mysql_service_name: "mysql"
+mysql_packages:
+  - mysql-community-server

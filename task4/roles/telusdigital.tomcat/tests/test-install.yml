@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  remote_user: root
+  vars:
+    java_version: 7
+  roles:
+    - role: telusdigital.java
+    - role: ansible-tomcat
+      tomcat_enabled: false

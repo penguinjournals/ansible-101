@@ -1,0 +1,21 @@
+---
+- name: "Import Signing Key via HKP | {{ repository_key }}"
+  apt_key:
+    state: present
+    keyserver: 'hkp://keyserver.ubuntu.com:80'
+    id: "{{ repository_key }}"
+  tags:
+    - repository
+    - signing-key
+    - using-apt
+    - assumes-trust
+    - improves-security
+
+- name: "Import Repository | {{ repository_url }}"
+  apt_repository:
+    state: present
+    repo: "{{ repository_url | mandatory }}"
+  notify: Update Package Cache
+
+- name: Trigger All Callbacks
+  meta: flush_handlers

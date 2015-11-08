@@ -1,0 +1,17 @@
+---
+dependencies:
+  - role: telusdigital.apt-repository
+    repository_key: "0xeb9b1d8886f44e2a"
+    repository_url: "deb http://ppa.launchpad.net/openjdk-r/ppa/ubuntu {{ ansible_distribution_release }} main"
+galaxy_info:
+  author: "Chris Olstrom"
+  description: "Java"
+  company: "TELUS digital"
+  license: MIT
+  platforms:
+    - name: Ubuntu
+      versions:
+      - precise
+      - trusty
+  categories:
+    - development

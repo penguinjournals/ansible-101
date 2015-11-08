@@ -1,0 +1,9 @@
+---
+- name: Install Packages | apt
+  apt:
+    pkg: "openjdk-{{ java_version }}-jdk"
+    state: latest
+  tags:
+    - java
+    - software-installation
+    - using-apt
