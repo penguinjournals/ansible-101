@@ -1,6 +1,6 @@
-frontend1 ansible_ssh_host=10.0.0.2
-frontend2 ansible_ssh_host=10.0.0.3
-database ansible_ssh_host=10.0.0.4
+frontend1 ansible_ssh_host=10.0.0.2 ansible_ssh_private_key_file=/Users/david/penguinjournals/ansible-101/task3/.vagrant/machines/vagrant1/virtualbox/private_key
+frontend2 ansible_ssh_host=10.0.0.3 ansible_ssh_private_key_file=/Users/david/penguinjournals/ansible-101/task3/.vagrant/machines/vagrant2/virtualbox/private_key
+database ansible_ssh_host=10.0.0.4 ansible_ssh_private_key_file=/Users/david/penguinjournals/ansible-101/task3/.vagrant/machines/vagrant3/virtualbox/private_key
 
 [frontends]
 frontend1
