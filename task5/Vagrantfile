@@ -6,11 +6,11 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty64"
-  config.vm.network "private_network", ip:"10.0.0.2"
   config.ssh.forward_agent = true
   config.ssh.insert_key = false
+  config.vm.network "private_network", ip:"10.0.0.2"
   config.vm.provider "virtualbox" do |v|
-    v.name = "Ansible-101 - Task 1"
+    v.name = "Ansible-101 - Task 5"
   end
 end
 
