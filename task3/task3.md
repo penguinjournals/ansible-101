@@ -19,8 +19,14 @@ We'll use apache with its default configuration and you'll have to remove origin
 
 If the task finishes correctly you should be able to see a web server in 10.0.0.2 and 10.0.0.3.
 
-# Task3:(bis)
+# Task3, steps:
 
-Memcached wasn't what we were looking for. Instead we've choose to install redis-server on database server. Which is your approach for facing it?
+1. Run task3-first-step.yml playbook. You'll get git installed in all your machines. You limit the scope of execution with the hosts parameter and use the apt module to install git. Re-run task3-first-step.yml to see an example of idempotence.
+
+2. Fill the task3-second-step.yml playbook so that you achieved what is required. 
+
+3. Run task3-second-step.yml and hit 10.0.0.2 or 10.0.0.3 to see your web servers up and running.
+
+4. Edit index.php file and re-run task3-second-step.yml, notice the state change on the execution log to see which of the tasks have changed their state. Open your browser to see your change applied.
 
 (*) Taken from ansibles documentation

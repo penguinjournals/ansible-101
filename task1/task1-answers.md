@@ -14,9 +14,8 @@ In this task, you have to achieve the next goals:
 
 3. Check the date and time of the machine
 
-    ansible task1 -a 'date'
+    ansible task1 -m command -a 'date'
 
 4. Get a list of the files in /root folder
 
-    ansible task1 -a 'ls /root' --sudo
-
+    ansible task1 -m command -a 'ls -la /root' --sudo

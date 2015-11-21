@@ -1,0 +1,3 @@
+db_host: database_host
+db_user: database_user
+db_pass: database_password

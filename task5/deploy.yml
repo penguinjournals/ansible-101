@@ -1,0 +1,25 @@
+---
+- hosts: webserver
+  vars:
+  - app_name: awesome_project
+  - projects_repository: https://github.com/penguinjournals/ansible-101-website.git
+  - local_temporary_storage_folder: /tmp
+  - remote_temporary_storage_folder: /tmp
+  vars_files:
+  - vault.yml
+  tasks:
+  - name: download version locally to get configuration files
+    tags: local_download
+    local_action:
+      module: git repo={{ projects_repository }} dest={{ local_temporary_storage_folder }}/{{ app_name }}
+
+  - name: clean servers remote folder
+    file: path={{ remote_temporary_storage_folder }}/{{ app_name }} state=absent
+
+  - name: download project to server temporary folder
+    tags: remote_download
+    git: repo={{ projects_repository }} dest={{ remote_temporary_storage_folder }}/{{ app_name }}
+
+  - name: rewrite configuration file
+    tags: regenerate_configuration_file
+    template: src={{ local_temporary_storage_folder }}/{{ app_name }}/credentials.php dest={{ remote_temporary_storage_folder }}/{{ app_name }}/credentials.php

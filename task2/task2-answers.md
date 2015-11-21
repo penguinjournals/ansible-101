@@ -15,4 +15,10 @@ Inventory file is the key when you want to manage multiple hosts at once. Here y
   
 3. You've been noticed about the Heartbleed Bug and you need to update openssl package in all of them.
 
-    ansible all -a 'apt-get install -y openssl' --sudo
+    ansible all -m command -a 'apt-get install -y openssl' --sudo
+    ansible all -m apt -a 'update_cache=yes name=openssl state=latest' --sudo
+
+    As you can see, using modules gives you a better feedback of the execution and are a good way to idempotence as far as you describe states more than instructions. You can take a look to all available modules at:
+    http://docs.ansible.com/ansible/modules_by_category.html
+
+    There are also unofficial modules and you can write your owns. Ask Google ;)

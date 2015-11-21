@@ -1,15 +1,15 @@
-frontend ansible_ssh_host=10.0.0.2
-backend ansible_ssh_host=10.0.0.3
-database ansible_ssh_host=10.0.0.4
+frontend1 ansible_ssh_host=10.0.0.2
+backend1 ansible_ssh_host=10.0.0.3
+database1 ansible_ssh_host=10.0.0.4
 
 [frontends]
-frontend
+frontend1
 
 [backends]
-backend
+backend1
 
 [databases]
-database
+database1
 
 [application:children]
 frontends
