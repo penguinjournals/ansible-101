@@ -5,8 +5,10 @@
   - projects_repository: https://github.com/penguinjournals/ansible-101-website.git
   - local_temporary_storage_folder: /tmp
   - remote_temporary_storage_folder: /tmp
+
   vars_files:
   - vault.yml
+
   tasks:
   - name: download version locally to get configuration files
     tags: local_download

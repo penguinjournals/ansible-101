@@ -7,20 +7,7 @@
         tomcat_hostname: localhost,
         tomcat_server_port: 8080
     }
-  tasks:
-    - name: Install nginx from apt
-      sudo: yes
-      apt: name=nginx state=present update_cache=yes
-
-    - name: Copy configuration file for nginx
-      sudo: yes
-      template: src=templates/nginx-default dest=/etc/nginx/sites-enabled/default
-      notify:
-        - Restart nginx
-
-  handlers:
-    - name: Restart nginx
-      service: name=nginx state=restarted
+    - nginx
 
 - hosts: databases
   roles:

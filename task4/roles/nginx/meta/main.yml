@@ -1,8 +1,11 @@
 ---
 galaxy_info:
-  author: Justin Phelps
-  description: A basic mysql role.
-  company: Rackspace
+  author: your name
+  description: 
+  company: your company (optional)
+  # If the issue tracker for your role is not on github, uncomment the
+  # next line and provide a value
+  # issue_tracker_url: http://example.com/issue/tracker
   # Some suggested licenses:
   # - BSD (default)
   # - MIT
@@ -10,14 +13,14 @@ galaxy_info:
   # - GPLv3
   # - Apache
   # - CC-BY
-  license: BSD
+  license: license (GPLv2, CC-BY, etc)
   min_ansible_version: 1.2
   #
   # Below are all platforms currently available. Just uncomment
   # the ones that apply to your role. If you don't see your 
   # platform on this list, let us know and we'll get it added!
   #
-  platforms:
+  #platforms:
   #- name: EL
   #  versions:
   #  - all
@@ -36,6 +39,16 @@ galaxy_info:
   #  - 18
   #  - 19
   #  - 20
+  #  - 21
+  #  - 22
+  #- name: Windows
+  #  versions:
+  #  - all
+  #  - 2012R2
+  #- name: SmartOS
+  #  versions:
+  #  - all
+  #  - any
   #- name: opensuse
   #  versions:
   #  - all
@@ -65,8 +78,8 @@ galaxy_info:
   #  - 9.1
   #  - 9.1
   #  - 9.2
-  - name: Ubuntu
-    versions:
+  #- name: Ubuntu
+  #  versions:
   #  - all
   #  - lucid
   #  - maverick
@@ -76,7 +89,9 @@ galaxy_info:
   #  - quantal
   #  - raring
   #  - saucy
-    - trusty
+  #  - trusty
+  #  - utopic
+  #  - vivid
   #- name: SLES
   #  versions:
   #  - all
@@ -94,6 +109,7 @@ galaxy_info:
   #  versions:
   #  - all
   #  - etch
+  #  - jessie
   #  - lenny
   #  - squeeze
   #  - wheezy
@@ -101,15 +117,15 @@ galaxy_info:
   # Below are all categories currently available. Just as with
   # the platforms above, uncomment those that apply to your role.
   #
-  categories:
+  #categories:
   #- cloud
   #- cloud:ec2
   #- cloud:gce
   #- cloud:rax
   #- clustering
-  - database
+  #- database
   #- database:nosql
-  - database:sql
+  #- database:sql
   #- development
   #- monitoring
   #- networking
@@ -117,8 +133,7 @@ galaxy_info:
   #- system
   #- web
 dependencies: []
-  # List your role dependencies here, one per line. Only
-  # dependencies available via galaxy should be listed here.
+  # List your role dependencies here, one per line.
   # Be sure to remove the '[]' above if you add dependencies
   # to this list.
   

@@ -8,3 +8,9 @@
       - git
       - apache2
       - libapache2-mod-php5
+  - name: Delete default index file
+    sudo: yes
+    file: path=/var/www/html/index.html state=absent
+  - name: Copy index file
+    sudo: yes
+    template: src=index.php dest=/var/www/html/index.php 

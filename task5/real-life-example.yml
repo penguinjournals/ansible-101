@@ -1,0 +1,62 @@
+---
+#STATIC ASSET UPDATE
+- hosts: all
+  gather_facts: False
+  vars:
+  - local_assets_folder: /home/tomcat/
+
+  vars_files:
+  - group_vars/common-vault.yml
+  - group_vars/{{ enviroment }}-vault.yml
+
+  tasks:
+  - include: tasks/webservers/update-assets.yml
+    tags: download_assets
+    when: enviroment == 'prod'
+
+#APPLICATION DEPLOYMENT
+- hosts: all
+  serial: 1
+  gather_facts: False
+
+  vars: 
+  - aws_env: {
+    AWS_ACCESS_KEY_ID: "{{ aws_access_key_id }}",
+    AWS_SECRET_ACCESS_KEY: "{{ aws_secret_access_key }}",
+    AWS_DEFAULT_REGION: "{{ aws_region }}"
+  }
+  - dest_path: "/home/tomcat/.grails"
+  
+  vars_files:
+  - group_vars/common-vault.yml
+  - group_vars/{{ enviroment }}-vault.yml
+  - group_vars/tomcat-properties.yml
+
+  tasks:
+  - include: tasks/webservers/check-war.yml  
+  - include: tasks/webservers/get-hash-from-version.yml 
+  - include: tasks/webservers/gather-ec2-facts.yml
+  - include: tasks/webservers/de-register-from-elb.yml
+    when: enviroment != 'development'
+  - include: tasks/webservers/disable-monitoring.yml
+  - include: tasks/webservers/update-configuration-file.yml
+  - include: tasks/webservers/deploy-war-file-to-tomcat.yml
+  - include: tasks/webservers/enable-monitoring.yml
+  - include: tasks/webservers/register-on-elb.yml
+    when: enviroment != 'development'
+  - include: tasks/webservers/update-local-working-copy.yml
+  - include: tasks/webservers/send-host-deployment-log-notification-to-slack.yml
+
+#DEPLOYMENT RESUME
+- hosts: 127.0.0.1
+  connection: local
+
+  vars_files:
+  - group_vars/common-vault.yml
+  - group_vars/{{ enviroment }}-vault.yml
+
+  tasks:
+  - include: tasks/webservers/get-hash-from-version.yml
+  - include: tasks/webservers/get-changes-from-git-and-close-tasks-in-jira.yml 
+  - include: tasks/webservers/send-deployment-resume-notification-to-slack.yml
+  - include: tasks/webservers/send-notification-to-new-relic-deployments.yml

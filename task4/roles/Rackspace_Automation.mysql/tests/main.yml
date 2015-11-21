@@ -1,7 +1,0 @@
----
-- hosts: localhost
-  connection: local
-  vars:
-    mysql_root_password: "supersecretpass123"
-  roles:
-    - Rackspace_Automation.mysql
