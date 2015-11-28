@@ -1,11 +1,12 @@
 - hosts: frontends
+  sudo: yes
   roles:
     - common
     - {
         role: telusdigital.tomcat,
         sudo: yes,
-        tomcat_hostname: localhost,
-        tomcat_server_port: 8080
+        tomcat_hostname: cocotero.dev,
+        tomcat_catalina_port: 8080
     }
     - nginx
 

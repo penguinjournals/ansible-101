@@ -15,13 +15,16 @@
     local_action:
       module: git repo={{ projects_repository }} dest={{ local_temporary_storage_folder }}/{{ app_name }}
 
-  - name: clean servers remote folder
-    file: path={{ remote_temporary_storage_folder }}/{{ app_name }} state=absent
+  - name: empty destination folder
+    sudo: yes
+    file: path=/var/www/html state=absent
 
-  - name: download project to server temporary folder
+  - name: download application to destination server
     tags: remote_download
-    git: repo={{ projects_repository }} dest={{ remote_temporary_storage_folder }}/{{ app_name }}
+    sudo: yes
+    git: repo={{ projects_repository }} dest=/var/www/html/
 
   - name: rewrite configuration file
     tags: regenerate_configuration_file
-    template: src={{ local_temporary_storage_folder }}/{{ app_name }}/credentials.php dest={{ remote_temporary_storage_folder }}/{{ app_name }}/credentials.php
+    sudo: yes
+    template: src={{ local_temporary_storage_folder }}/{{ app_name }}/credentials.php dest=/var/www/html/credentials.php

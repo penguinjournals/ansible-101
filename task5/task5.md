@@ -8,12 +8,8 @@ First you should run the setup.yml playbook. It will setup a server with apache 
 
 1. Download locally a copy of the git repo in the required version to get the configuration template file
 
-2. Clean remotes temporary folder
+2. Download required version to destination servers temporary folder
 
-3. Download required version to destination servers temporary folder
-
-4. Rewrite configuration file
-
-5. Deploy remotely the new version of the software
+3. Replace configuration file
 
 (*) Taken from ansibles documentation
