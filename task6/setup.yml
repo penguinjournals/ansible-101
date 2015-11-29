@@ -1,0 +1,16 @@
+---
+- hosts: frontends
+  tasks:
+  - name: Install frontend base packages
+    sudo: yes
+    apt: name={{item}} update_cache=yes state=present
+    with_items: 
+      - git
+      - apache2
+      - libapache2-mod-php5
+  - name: Delete default index file
+    sudo: yes
+    file: path=/var/www/html/index.html state=absent
+  - name: Copy index file
+    sudo: yes
+    template: src=index.html dest=/var/www/html/index.html

@@ -1,0 +1,8 @@
+frontend1 ansible_ssh_host=52.18.81.253
+frontend2 ansible_ssh_host=52.16.220.38
+frontend3 ansible_ssh_host=52.17.78.114
+
+[frontends]
+frontend1
+frontend2
+frontend3
