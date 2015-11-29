@@ -17,6 +17,8 @@ Database server:
 - vim
 - mysql-server (root password: cocotero)
 
+You can only write calls to roles, which are on the roles folder. As a result, host will be setup to listen as cocotero.dev, tomcat will have to run on port 8080 proxyed by nginx and mysql will have to be bind to 10.0.0.3 with "cocotero" as root password.
+
 Even if task4.yml seems a simple playbook it does a lot of things. It uses roles, some written by us and some others taken from [Ansible galaxy] (https://galaxy.ansible.com).
 
 "common" and "nginx" are written by us the same way as previously we executed some tasks to all hosts now we include the role in those servers which require it.

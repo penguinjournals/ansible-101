@@ -1,0 +1,21 @@
+- hosts: frontends
+  sudo: yes
+  roles:
+    - common
+    - {
+        role: telusdigital.tomcat,
+        sudo: yes,
+        tomcat_hostname: cocotero.dev,
+        tomcat_catalina_port: 8080
+    }
+    - nginx
+
+- hosts: databases
+  roles:
+    - common
+    - {
+      role: bennojoy.mysql,
+      sudo: yes,
+      mysql_bind_address: 10.0.0.3,
+      mysql_root_db_pass: cocotero
+    }
