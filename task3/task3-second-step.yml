@@ -15,24 +15,17 @@
     sudo: yes
     apt: name={{item}} state=present update_cache=yes cache_valid_time=3600
     with_items:
-      - memcached
-      - apache2
-      - libapache2-mod-php5
   
   - name: Delete default index file
     sudo: yes
-    file: path=/var/www/html/index.html state=absent
+    file:
 
   - name: Copy index file
     sudo: yes
-    template: src=index.php dest=/var/www/html/index.php
+    template:
 
 
 - hosts: databases
 
   tasks:
   - name: Install database base packages
-    sudo: yes
-    apt: name={{item}} state=present update_cache=yes cache_valid_time=3600
-    with_items:
-      - redis-server
