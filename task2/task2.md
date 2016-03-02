@@ -9,4 +9,7 @@ Inventory file is the key when you want to manage multiple hosts at once. Here y
     * You are encouraged to keep in mind that you may have serveral frontend, backend or databases in the future (groups, groups everywhere). 
 3. You've been noticed about the Heartbleed Bug and you need to update openssl package in all of them.
 
+4. Extra ball:
+    * How would you create a user for each role of server (frontuser,backuser and databaseuser).
+
 [Tip] (http://docs.ansible.com/ansible/intro_inventory.html)
