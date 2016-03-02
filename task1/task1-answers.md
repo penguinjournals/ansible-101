@@ -18,4 +18,4 @@ In this task, you have to achieve the next goals:
 
 4. Get a list of the files in /root folder
 
-    ansible task1 -m command -a 'ls -la /root' --sudo
+    ansible task1 -m command -a 'ls -la /root' -become
