@@ -4,9 +4,9 @@ Ansible is agentless, the only thing you need to start trying Ansible is Ansible
 
 In this task, you have to achieve the next goals:
 
-1. Start your [vagrant] (https://www.vagrantup.com/) machine defined in this folder
-2. Check that you can access the machine with Ansible
-3. Check the date and time of the machine
-4. Get a list of the files in /root folder
+1. Start your [vagrant] (https://www.vagrantup.com/) machines defined in this folder
+2. Check that you can access the machines with Ansible
+3. Check the date and time of the machines
+4. Get a list of the files in /root folder of one and then both of the machines
 
 [Tip] (http://docs.ansible.com/ansible/intro_getting_started.html)
