@@ -3,7 +3,7 @@
 
   tasks:
   - name: Install base common packages
-    sudo: yes
+    become: yes
     apt: name={{item}} update_cache=yes state=present
     with_items:
       - git
@@ -12,17 +12,17 @@
 
   tasks:
   - name: Install frontend base packages
-    sudo: yes
+    become: yes
     apt: name={{item}} update_cache=yes state=present
     with_items: 
       - apache2
       - libapache2-mod-php5
       - memcached
   - name: Delete default index file
-    sudo: yes
+    become: yes
     file: path=/var/www/html/index.html state=absent
   - name: Copy index file
-    sudo: yes
+    become: yes
     template: src=index.php dest=/var/www/html/index.php 
 
 
@@ -30,7 +30,7 @@
 
   tasks:
   - name: Install database base packages
-    sudo: yes
+    become: yes
     apt: name={{item}} update_cache=yes state=present
     with_items:
       - redis-server

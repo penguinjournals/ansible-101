@@ -3,7 +3,7 @@
 
   tasks:
   - name: Install base common packages
-    sudo: yes
+    become: yes
     apt: name={{item}} state=present update_cache=yes cache_valid_time=3600
     with_items:
       - git
@@ -12,16 +12,16 @@
 
   tasks:
   - name: Install frontend base packages
-    sudo: yes
+    become: yes
     apt: name={{item}} state=present update_cache=yes cache_valid_time=3600
     with_items:
   
   - name: Delete default index file
-    sudo: yes
+    become: yes
     file:
 
   - name: Copy index file
-    sudo: yes
+    become: yes
     template:
 
 
