@@ -13,9 +13,9 @@ Inventory file is the key when you want to manage multiple hosts at once. Here y
 
     Look at hosts.answer file. You will notice groups created for frontends,backends and databases, even if not needed it's a good idea to be prepared for the future. Isn't your project the next billion idea? Pay special attention at the concept of group of groups defined as [application:children]
   
-3. You've been noticed about the Heartbleed Bug and you need to update openssl package in all of them.
+3. You've been noticed about the DROWN Bug and you need to update openssl package in all of them.
 
-    ansible all -m command -a 'apt-get install -y openssl' --become
+    ansible all -m command -a 'apt-get update && apt-get install -y openssl' --become
     ansible all -m apt -a 'update_cache=yes name=openssl state=latest' --become
 
 4. Extra ball:
