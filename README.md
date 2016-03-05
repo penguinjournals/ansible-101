@@ -1,5 +1,5 @@
 # ansible-101
-"Ansible 101" workshop at [CAS2015](http://cas2015.agile-spain.org).
+"Ansible 101" workshop.
 
 ## Step 1
 Install [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
